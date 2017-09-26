@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<title>TEMPERATURE CONVERTER</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+  <script src="js/jquery/3.2.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <style>
+  @import url('fonts/fonts.css');
+  
+ body {
+	background-color: #000;
+	font-family: "BadaBoom";
+	}
+
+	#calculator {
+	background-color: #ffffff;
+	margin: 80px auto;
+	padding: 20px;
+	width: 500px;
+    height : 100px
+	font-family: "BadaBoom";
+	border-radius: 20px;
+}
+
+
+#thumb , #numb {
+	color: black;
+	text-align: center;
+	font-family: "BadaBoom";
+	letter-spacing: 1.0px;
+	font-size: 30px;
+	font-color: black;
+	background: #5e5e5e;
+	padding: 70px 0px  0px  0px;   
+	width: 100%;
+	margin: 10px 0 10px 0;
+	border: 0;
+	outline: 0;
+	border-radius: 10px;
+	box-shadow: 0px 5px 0 #333;
+	text-shadow: 0 1px 0 #333;
+}
+	</style>
+	
+<body>
+<div  id="calculator"  style="background-color: white;">
+<h1 style="text-align: center">KEKEMOVIC</h1>
+<h2 style="text-align: center">TEMPERATURE  CONVERTER</h2>
+<p style="text-align: center"><b>Please input a number to be converted in the first box</p></b>
+<input style="background-color:teal" id="numb" class="n" name="Input Numero" placeholder="Input your number here" >
+
+<input style="background-color:emerald"  class= "n" id="thumb" type="text" placeholder="Answer appears here" disabled>
+<br>
+<button type="button" style="float: right" onclick=" document.getElementById('thumb').value = myCelsius()" class="btn-danger  btn-xs">fahrenheit</button>
+<button type="button" style="float: left"onclick=" document.getElementById('thumb').value = myFahrenheit()" class="btn-info  btn-xs">celsius</button>
+<br>
+<div class="text-center"><button type="button" onclick="clR()" class="btn-success  btn-xs">reset</button></div>
+<br><br>
+<p style="text-align: center" ><b> Fahrenheit button converts from celsius to fahrenheit</p></b>
+<p style="text-align: center" ><b> Celsius button converts from fahrenheit to celsius</p></b>
+
+
+</div>
+<script>
+function myCelsius(F) {
+    var  x = document.getElementById("numb").value;
+ return Math.round((x * 9/5) + 32)  +  "  degrees fahrenheit";
+	}
+	
+	
+	function myFahrenheit(C) {
+	var  y =document.getElementById("numb").value;
+	return Math.round((y - 32) * 5/9)  + "  degrees celsius";
+}	
+	
+function clR() {
+    document.getElementById('numb').value = ""; 
+    document.getElementById('thumb').value = "";
+}
+</script>
+
+</body>
+
+</html> 
